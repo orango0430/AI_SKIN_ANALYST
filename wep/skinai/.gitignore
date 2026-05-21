@@ -1,0 +1,17 @@
+# Frontend (CRA) artifacts
+node_modules/
+build/
+.env
+.env.local
+.env.*.local
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 부모 .gitignore가 *.json 차단 → 프론트 빌드/배포에 필요한 파일은 명시적 허용
+!package.json
+!package-lock.json
+!vercel.json
+!public/manifest.json
