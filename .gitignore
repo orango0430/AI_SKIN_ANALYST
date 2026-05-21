@@ -1,0 +1,81 @@
+# ─── Python ───────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# ─── Virtual envs ─────────────────────
+venv/
+venvs/
+env/
+.venv/
+
+# ─── IDE / OS ─────────────────────────
+.vscode/
+.idea/
+__MACOSX/
+.DS_Store
+Thumbs.db
+
+# ─── Docker / 데이터셋(외부 위치) ────
+docker/
+.dockerignore
+img/
+label/
+vis/
+checkpoint/
+dataset/
+tensorboard/
+save_img/
+eval/
+prediction/
+
+# ─── 시크릿 / 환경설정 ────────────────
+.env
+**/.env
+!.env.example
+!**/.env.example
+
+# ─── Frontend artifacts ───────────────
+node_modules/
+build/
+
+# ─── 로그/임시 파일 ───────────────────
+*.log
+*.out
+analyze_*.log
+prewarm_*.log
+calib_*.log
+chin_*.log
+extract_*.log
+pkg_err.log
+
+# ─── 백업/복사본 (한글 이름 포함) ────
+*복사본*
+**/*복사본*/
+
+# ─── 업로드/대용량 산출물 ────────────
+backend/uploads/
+backend/multiclass_wrong_samples.png
+backend/diagnosis.py.bak
+AI_Skin_Analyst/
+
+# ─── 데이터 포맷 ──────────────────────
+*.tar
+*.xlsx
+*.ipynb
+
+# ─── 이미지 파일: test_img만 추적 허용 ─
+*.jpg
+*.jpeg
+!test_img.jpg
+
+# ─── json 차단 + 필수만 명시 허용 ─────
+*.json
+!reg_calibration_mp.json
+!reg_calibration.json
+!package.json
+!package-lock.json
+!vercel.json
+!**/manifest.json
