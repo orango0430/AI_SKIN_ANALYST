@@ -1,0 +1,36 @@
+# PyTorch는 CPU 빌드 강제 (CUDA 휠은 2GB+ 라 HF Spaces 빌드 실패)
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# ─── 웹 프레임워크 ───────────────────
+fastapi==0.128.8
+uvicorn==0.39.0
+python-multipart>=0.0.9
+
+# ─── Pydantic + 이메일 ──────────────
+pydantic==2.12.5
+email-validator==2.3.0
+
+# ─── DB / ORM ────────────────────────
+sqlalchemy==2.0.49
+PyMySQL==1.1.2
+
+# ─── 인증 ────────────────────────────
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+
+# ─── 환경변수 / 유틸 ────────────────
+python-dotenv>=1.0.0
+
+# ─── Gemini AI 챗봇 ──────────────────
+google-genai==1.47.0
+
+# ─── ML / 추론 ───────────────────────
+# mediapipe 0.10.9: legacy mp.solutions 네임스페이스 보존 버전 (0.10.10+ 에서 제거됨)
+torch==2.8.0
+torchvision==0.23.0
+numpy==2.0.2
+opencv-python-headless==4.13.0.92
+pillow==11.3.0
+mediapipe==0.10.9
+natsort==8.4.0
+tqdm==4.67.3
