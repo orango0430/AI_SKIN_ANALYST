@@ -18,9 +18,8 @@ __MACOSX/
 .DS_Store
 Thumbs.db
 
-# ─── Docker / 데이터셋(외부 위치) ────
+# ─── 데이터셋(외부 위치) ────────────
 docker/
-.dockerignore
 img/
 label/
 vis/
