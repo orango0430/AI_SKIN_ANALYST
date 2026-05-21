@@ -1,0 +1,83 @@
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 9000;
+  background: rgba(0,0,0,0.55); backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.auth-modal {
+  background: #fff; border-radius: 24px;
+  width: 100%; max-width: 440px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.2);
+  overflow: hidden; animation: modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes modalIn {
+  from { transform: scale(0.88) translateY(20px); opacity: 0; }
+  to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+.modal-header {
+  background: linear-gradient(135deg, #0d4729 0%, #27ae60 100%);
+  padding: 32px 36px 28px; position: relative;
+}
+.modal-close {
+  position: absolute; top: 16px; right: 16px;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(255,255,255,0.2); border: none;
+  color: #fff; font-size: 1rem;
+  display: flex; align-items: center; justify-content: center; transition: all 0.2s;
+}
+.modal-close:hover { background: rgba(255,255,255,0.35); }
+.modal-logo { font-size: 2rem; margin-bottom: 10px; }
+.modal-header h2 { color: #fff; font-size: 1.4rem; font-weight: 800; }
+.modal-header p { color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-top: 4px; }
+.auth-tabs { display: flex; background: #f8f9fa; border-bottom: 1.5px solid var(--border); }
+.auth-tab {
+  flex: 1; padding: 14px; font-size: 0.95rem; font-weight: 700;
+  border: none; background: transparent; cursor: pointer; transition: all 0.2s;
+  color: var(--text-light); border-bottom: 3px solid transparent;
+}
+.auth-tab.active { color: var(--green-dark); border-bottom-color: var(--green-light); background: #fff; }
+.auth-form-wrap { padding: 28px 36px 32px; }
+.auth-alert {
+  padding: 11px 14px; border-radius: 10px; font-size: 0.85rem; font-weight: 600;
+  margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+}
+.auth-alert.error { background: var(--error-bg); color: var(--error); border: 1px solid #f5c6cb; }
+.auth-alert.success { background: var(--green-pale); color: var(--green-dark); border: 1px solid #a9dfbf; }
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 7px; }
+.input-wrap { position: relative; }
+.input-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 1rem; pointer-events: none; }
+.input-wrap input {
+  width: 100%; padding: 12px 14px 12px 40px;
+  border: 1.5px solid var(--border); border-radius: 10px;
+  font-family: inherit; font-size: 0.93rem;
+  outline: none; transition: all 0.2s; background: #fafafa;
+}
+.input-wrap input:focus { border-color: var(--green-light); box-shadow: 0 0 0 3px rgba(46,204,113,0.12); background: #fff; }
+.input-wrap input.error { border-color: var(--error); }
+.pw-toggle {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; font-size: 1rem; color: var(--text-light); padding: 2px;
+}
+.err-msg { font-size: 0.78rem; color: var(--error); margin-top: 5px; }
+.pw-strength { margin-top: 8px; }
+.pw-bar { height: 4px; border-radius: 2px; background: #e8e8e8; overflow: hidden; margin-bottom: 4px; }
+.pw-fill { height: 100%; border-radius: 2px; transition: width 0.3s, background 0.3s; }
+.pw-label { font-size: 0.75rem; }
+.forgot-pw { text-align: right; margin-top: -10px; margin-bottom: 18px; }
+.forgot-pw a { font-size: 0.82rem; color: var(--text-light); transition: color 0.2s; }
+.forgot-pw a:hover { color: var(--green); }
+.form-check { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 18px; }
+.form-check input[type=checkbox] { width: 16px; height: 16px; flex-shrink: 0; accent-color: var(--green); margin-top: 2px; }
+.form-check label { font-size: 0.83rem; color: var(--text-light); line-height: 1.5; }
+.form-check label a { color: var(--green); font-weight: 600; }
+.auth-submit {
+  width: 100%;
+  background: linear-gradient(135deg, var(--green-light), var(--green-dark));
+  color: #fff; border: none; border-radius: 50px;
+  padding: 14px; font-size: 1rem; font-weight: 700;
+  box-shadow: 0 6px 20px rgba(39,174,96,0.35); transition: all 0.25s;
+}
+.auth-submit:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(39,174,96,0.45); }
+.auth-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.switch-tab { text-align: center; margin-top: 16px; font-size: 0.85rem; color: var(--text-light); }
+.switch-tab span { color: var(--green); font-weight: 700; cursor: pointer; }
