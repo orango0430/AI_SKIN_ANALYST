@@ -1,3 +1,4 @@
+import os
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -20,10 +21,12 @@ async def lifespan(_app: FastAPI):
 
 app = FastAPI(title="SkinAI API", lifespan=lifespan)
 
-# ── CORS 설정 (React에서 요청 허용) ──
+# ── CORS — 환경변수 CORS_ORIGINS (콤마 구분). 로컬은 localhost:3000 fallback ──
+_cors_env = os.getenv("CORS_ORIGINS", "http://localhost:3000")
+allow_origins = [o.strip() for o in _cors_env.split(",") if o.strip()]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # React 개발 서버
+    allow_origins=allow_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
