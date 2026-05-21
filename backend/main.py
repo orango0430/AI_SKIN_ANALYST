@@ -1,0 +1,39 @@
+from contextlib import asynccontextmanager
+
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from auth import router as auth_router
+from chat import router as chat_router
+from diagnosis import router as diagnosis_router
+
+
+@asynccontextmanager
+async def lifespan(_app: FastAPI):
+    # 서버 시작 시 모델 사전 로드 (첫 요청 지연 제거)
+    try:
+        from skin_inference import prewarm
+        prewarm()
+    except Exception as e:
+        print(f"[lifespan] prewarm 실패(요청 시 다시 시도): {e}")
+    yield
+
+
+app = FastAPI(title="SkinAI API", lifespan=lifespan)
+
+# ── CORS 설정 (React에서 요청 허용) ──
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # React 개발 서버
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# ── 라우터 등록 ──
+app.include_router(auth_router)
+app.include_router(chat_router)
+app.include_router(diagnosis_router)
+
+@app.get("/")
+def root():
+    return {"message": "SkinAI API 서버 실행 중"}
