@@ -6,10 +6,16 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# MySQL 연결 설정 (.env에서 읽음)
-DATABASE_URL = os.getenv("DATABASE_URL")
+# DATABASE_URL은 호스팅 platform secrets에서 주입.
+# 미설정 시 컨테이너 내부 SQLite로 fallback (개발/임시 데모용; 재배포 시 데이터 소실).
+DATABASE_URL = os.getenv("DATABASE_URL") or "sqlite:///./skinai.db"
 
-engine = create_engine(DATABASE_URL)
+# SQLite는 멀티스레드 FastAPI에서 connect_args 필요. MySQL/PG는 기본값으로 OK.
+_engine_kwargs = {}
+if DATABASE_URL.startswith("sqlite"):
+    _engine_kwargs["connect_args"] = {"check_same_thread": False}
+
+engine = create_engine(DATABASE_URL, **_engine_kwargs)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
