@@ -1,3 +1,5 @@
+import os
+
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 import bcrypt
@@ -11,7 +13,9 @@ from models import User
 router = APIRouter(prefix="/auth", tags=["auth"])
 
 # ── 설정 ──────────────────────────────────────
-SECRET_KEY = "skinai-secret-key-change-this"  # 실제 배포 시 반드시 변경
+# JWT 서명 키 — 프로덕션은 반드시 호스팅 secrets에 JWT_SECRET_KEY로 설정.
+# 미설정 시 로컬 dev용 fallback (절대 prod에서 사용 금지).
+SECRET_KEY = os.getenv("JWT_SECRET_KEY", "skinai-dev-secret-change-in-prod")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24  # 24시간
 
