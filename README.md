@@ -1,3 +1,14 @@
+---
+title: SkinAI Backend
+emoji: 🩺
+colorFrom: green
+colorTo: blue
+sdk: docker
+app_port: 7860
+pinned: false
+license: mit
+---
+
 # Skin AI Analyst
 
 AI 기반 피부 진단 웹·앱 서비스. 단국대학교 졸업작품 (Team Skinmate).
