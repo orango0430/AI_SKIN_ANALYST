@@ -1,0 +1,15 @@
+# Git LFS — 큰 바이너리(ResNet50 가중치 ~90MB×11)는 LFS로 추적.
+# HF Spaces는 10MB+ 파일에 LFS 강제. GitHub은 100MB가 한계지만 LFS 권장.
+checkpoint2/**/state_dict.bin filter=lfs diff=lfs merge=lfs -text
+
+# 줄바꿈 정규화 — Windows/Unix 혼용 환경에서 일관성 유지
+* text=auto
+*.py text
+*.md text
+*.json text
+*.css text
+*.jsx text
+*.js text
+*.bin binary
+*.jpg binary
+*.png binary
