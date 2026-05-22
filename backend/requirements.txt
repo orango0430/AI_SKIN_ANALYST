@@ -21,6 +21,9 @@ passlib[bcrypt]>=1.7.4
 # ─── 환경변수 / 유틸 ────────────────
 python-dotenv>=1.0.0
 
+# 빌드 시 HF Model Hub에서 체크포인트 다운로드용 (Space repo 1GB 한계 회피)
+huggingface_hub>=0.20.0
+
 # ─── Gemini AI 챗봇 ──────────────────
 google-genai==1.47.0
 
