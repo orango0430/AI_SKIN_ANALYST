@@ -26,11 +26,19 @@ COPY backend/requirements.txt ./backend/requirements.txt
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r backend/requirements.txt
 
-# 앱 코드 + 모델 가중치 + 캘리브 (이미지에 베이크)
+# 앱 코드 + 캘리브
 COPY ai/ ./ai/
 COPY backend/ ./backend/
-COPY checkpoint2/ ./checkpoint2/
 COPY reg_calibration_mp.json ./
+
+# 모델 가중치는 HF Model Hub에서 빌드 시 다운로드 (Space repo 1GB LFS 한계 회피).
+# repo 이름은 환경/플랫폼 secrets로 바꿔도 됨 (default = siwon0430/skinai-checkpoints).
+# Public repo면 토큰 불필요. Private이면 --build-arg HF_TOKEN=... 필요.
+ARG MODEL_REPO=siwon0430/skinai-checkpoints
+ARG MODEL_REVISION=main
+RUN python -c "from huggingface_hub import snapshot_download; \
+snapshot_download(repo_id='${MODEL_REPO}', revision='${MODEL_REVISION}', \
+local_dir='/app/checkpoint2', local_dir_use_symlinks=False)"
 
 # FastAPI 포트 — HF Spaces 기본 7860, Railway는 $PORT 자동 주입
 ENV PORT=7860
