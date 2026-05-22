@@ -10,6 +10,14 @@ from diagnosis import router as diagnosis_router
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
+    # DB 테이블 자동 생성 (idempotent — 이미 있으면 무시)
+    try:
+        from database import engine, Base
+        import models  # noqa: F401 — Base.metadata 등록 트리거
+        Base.metadata.create_all(bind=engine)
+    except Exception as e:
+        print(f"[lifespan] DB 테이블 생성 실패: {e}")
+
     # 서버 시작 시 모델 사전 로드 (첫 요청 지연 제거)
     try:
         from skin_inference import prewarm
