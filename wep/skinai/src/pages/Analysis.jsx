@@ -12,6 +12,7 @@ export default function Analysis() {
   const [error, setError] = useState('');
   const [dragOver, setDragOver] = useState(false);
   const fileRef = useRef();
+  const cameraRef = useRef();
   const { authFetch } = useAuth();
   const navigate = useNavigate();
 
@@ -67,6 +68,7 @@ export default function Analysis() {
             onDrop={(e) => { e.preventDefault(); setDragOver(false); handleFile(e.dataTransfer.files[0]); }}
           >
             <input ref={fileRef} type="file" accept="image/*" style={{ display: 'none' }} onChange={(e) => handleFile(e.target.files[0])} />
+            <input ref={cameraRef} type="file" accept="image/*" capture="user" style={{ display: 'none' }} onChange={(e) => handleFile(e.target.files[0])} />
             <div className="upload-icon">📁</div>
             <h4>사진을 끌어놓거나 클릭하여 선택</h4>
             <p>얼굴 정면 사진을 업로드해 주세요<br/>자연광 환경에서 찍은 사진이 좋아요</p>
@@ -74,6 +76,14 @@ export default function Analysis() {
               {['JPG','PNG','WEBP','최대 10MB'].map(f => <span key={f} className="format-badge">{f}</span>)}
             </div>
           </div>
+
+          <button
+            type="button"
+            className="camera-btn"
+            onClick={(e) => { e.stopPropagation(); cameraRef.current.click(); }}
+          >
+            📸 카메라로 촬영하기
+          </button>
 
           {preview && <img src={preview} alt="미리보기" className="preview-img" />}
 
