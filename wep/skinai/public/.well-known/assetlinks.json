@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.vercel.ai_skin_analyst.twa",
+      "sha256_cert_fingerprints": [
+        "23:B5:E6:41:62:96:D3:E8:FC:8C:40:70:93:3E:70:D0:10:41:D9:E7:02:16:6A:C0:C4:BF:6A:95:DF:68:F7:1B"
+      ]
+    }
+  }
+]
