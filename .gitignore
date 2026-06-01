@@ -78,3 +78,7 @@ AI_Skin_Analyst/
 !package-lock.json
 !vercel.json
 !**/manifest.json
+!**/assetlinks.json
+
+# ─── Android APK 빌드 산출물 (keystore 절대 노출 금지) ─────
+apk/
