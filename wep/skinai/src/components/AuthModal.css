@@ -81,3 +81,18 @@
 .auth-submit:disabled { opacity: 0.6; cursor: not-allowed; }
 .switch-tab { text-align: center; margin-top: 16px; font-size: 0.85rem; color: var(--text-light); }
 .switch-tab span { color: var(--green); font-weight: 700; cursor: pointer; }
+
+@media (max-width: 768px) {
+  .modal-overlay { padding: 12px; align-items: flex-start; padding-top: 40px; }
+  .auth-modal { border-radius: 20px; max-height: calc(100vh - 60px); overflow-y: auto; }
+  .modal-header { padding: 24px 22px 20px; }
+  .modal-logo { font-size: 1.6rem; margin-bottom: 6px; }
+  .modal-header h2 { font-size: 1.2rem; }
+  .modal-header p { font-size: 0.84rem; }
+  .auth-tab { padding: 12px; font-size: 0.9rem; }
+  .auth-form-wrap { padding: 22px 22px 26px; }
+  .form-group { margin-bottom: 14px; }
+  .input-wrap input { padding: 11px 12px 11px 38px; }
+  .auth-submit { padding: 13px; font-size: 0.95rem; }
+  .form-check label { font-size: 0.78rem; }
+}

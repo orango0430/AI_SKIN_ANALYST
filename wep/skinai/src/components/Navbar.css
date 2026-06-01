@@ -80,3 +80,23 @@
 .dropdown-item.logout { color: var(--error); }
 .dropdown-item.logout:hover { background: var(--error-bg); }
 .dropdown-divider { height: 1px; background: var(--border); }
+
+@media (max-width: 768px) {
+  .navbar { padding: 0 14px; height: 56px; }
+  .nav-logo { font-size: 1.1rem; gap: 4px; }
+  .nav-links { gap: 2px; }
+  .nav-link { padding: 6px 8px; font-size: 0.78rem; }
+  .nav-cta { padding: 6px 10px !important; font-size: 0.78rem !important; }
+  .nav-cta span, .nav-link span { display: inline; }
+  .btn-login-nav { padding: 6px 10px; font-size: 0.78rem; }
+  .btn-signup-nav { padding: 6px 12px; font-size: 0.78rem; }
+  .nav-user-info { padding: 4px 10px; gap: 6px; }
+  .nav-avatar { width: 26px; height: 26px; font-size: 0.78rem; }
+  .nav-username { max-width: 60px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.8rem; }
+}
+@media (max-width: 480px) {
+  .navbar { padding: 0 10px; }
+  .nav-logo span { display: none; }
+  .nav-logo { font-size: 1.3rem; }
+  .nav-link { padding: 5px 6px; font-size: 0.74rem; }
+}
