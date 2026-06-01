@@ -28,3 +28,9 @@ body {
 
 button { cursor: pointer; font-family: inherit; }
 a { text-decoration: none; }
+
+html { overflow-x: hidden; }
+@media (max-width: 768px) {
+  body { font-size: 15px; }
+  input, textarea, select { font-size: 16px; }
+}

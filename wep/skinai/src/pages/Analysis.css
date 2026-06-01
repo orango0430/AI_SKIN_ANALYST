@@ -50,4 +50,29 @@
 .level-high { background: #fde8e8; color: #e74c3c; }
 .level-mid { background: #fef3cd; color: #e67e22; }
 .level-low { background: var(--green-pale); color: var(--green); }
-@media (max-width: 768px) { .analysis-layout { grid-template-columns: 1fr; padding: 20px; } }
+@media (max-width: 768px) {
+  .analysis-page { padding-top: 56px; }
+  .analysis-layout { grid-template-columns: 1fr; padding: 16px; gap: 16px; }
+  .panel { padding: 18px; border-radius: 16px; }
+  .panel-title { font-size: 1rem; margin-bottom: 16px; }
+  .upload-zone { padding: 28px 16px; border-radius: 14px; }
+  .upload-icon { font-size: 2.4rem; margin-bottom: 8px; }
+  .upload-zone h4 { font-size: 0.95rem; }
+  .upload-zone p { font-size: 0.82rem; }
+  .formats { gap: 6px; margin-top: 10px; }
+  .format-badge { font-size: 0.68rem; padding: 2px 8px; }
+  .camera-btn { padding: 14px; font-size: 0.95rem; }
+  .tip-box { font-size: 0.8rem; padding: 12px; }
+  .analyze-btn { padding: 14px; font-size: 1rem; }
+  .loading-box { padding: 32px 28px; border-radius: 20px; }
+  .skin-score { padding: 18px; gap: 14px; }
+  .score-circle { width: 64px; height: 64px; }
+  .score-circle span { width: 50px; height: 50px; font-size: 1rem; }
+  .score-info h3 { font-size: 1rem; }
+  .score-info p { font-size: 0.82rem; }
+  .progress-section h4 { font-size: 0.9rem; }
+  .label-row { font-size: 0.8rem; }
+  .issue-item { padding: 12px; gap: 10px; }
+  .result-empty { padding: 36px 16px; }
+  .empty-icon { font-size: 2.8rem; }
+}

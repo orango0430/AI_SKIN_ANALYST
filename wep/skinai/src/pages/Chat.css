@@ -70,4 +70,23 @@
   font-size: 0.85rem; padding: 6px 0;
 }
 
-@media (max-width: 768px) { .chat-layout { padding: 20px; } }
+@media (max-width: 768px) {
+  .chat-page { padding-top: 56px; }
+  .chat-layout { padding: 12px; }
+  .chat-header { padding: 18px 16px; gap: 12px; border-radius: 16px 16px 0 0; }
+  .chat-avatar { width: 42px; height: 42px; font-size: 1.3rem; }
+  .chat-header-info h2 { font-size: 1rem; }
+  .chat-header-info p { font-size: 0.78rem; }
+  .chat-status { font-size: 0.74rem; }
+  .chat-window { height: calc(100vh - 320px); min-height: 320px; padding: 16px; gap: 12px; }
+  .msg { max-width: 88%; }
+  .msg-avatar { width: 30px; height: 30px; font-size: 0.88rem; }
+  .msg-bubble { padding: 10px 14px; font-size: 0.88rem; }
+  .suggestion-btn { font-size: 0.76rem; padding: 5px 12px; }
+  .chat-input-area { padding: 12px; border-radius: 0 0 16px 16px; }
+  .quick-btn { font-size: 0.74rem; padding: 4px 12px; }
+  .input-row textarea { font-size: 0.92rem; padding: 10px 14px; }
+  .send-btn { width: 40px; height: 40px; font-size: 1rem; }
+  .chat-action-btn { width: 32px; height: 32px; font-size: 0.9rem; margin-left: 6px; }
+  .history-panel { padding: 12px 14px; max-height: 140px; }
+}

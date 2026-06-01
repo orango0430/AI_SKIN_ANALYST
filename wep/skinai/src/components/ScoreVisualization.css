@@ -74,3 +74,14 @@
   transition: all 0.2s;
 }
 .mypage-link:hover { background: #d4f0dd; transform: translateY(-1px); }
+
+@media (max-width: 768px) {
+  .skin-score-hero { flex-direction: column; text-align: center; gap: 16px; padding: 22px 18px; border-radius: 16px; }
+  .score-info-block h3 { font-size: 0.9rem; }
+  .score-status { font-size: 1.4rem; }
+  .score-summary { font-size: 0.86rem; }
+  .score-num { font-size: 2.2rem; }
+  .section-divider { margin: 20px 0 12px; font-size: 0.75rem; }
+  .radar-wrap svg { max-width: 100%; height: auto; }
+  .mypage-link { padding: 5px 12px; font-size: 0.72rem; }
+}

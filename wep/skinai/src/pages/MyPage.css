@@ -198,7 +198,30 @@
 }
 
 @media (max-width: 768px) {
-  .mypage-inner { padding: 24px 16px 60px; }
-  .profile-card { flex-direction: column; text-align: center; }
-  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .mypage { padding-top: 56px; }
+  .mypage-inner { padding: 20px 14px 60px; }
+  .profile-card { flex-direction: column; text-align: center; padding: 24px 20px; border-radius: 20px; gap: 14px; }
+  .profile-avatar { width: 60px; height: 60px; font-size: 1.5rem; }
+  .profile-meta h2 { font-size: 1.2rem; }
+  .profile-meta p { font-size: 0.85rem; }
+  .profile-cta { padding: 10px 20px; font-size: 0.88rem; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 18px; }
+  .stat-card { padding: 16px; border-radius: 12px; }
+  .stat-value { font-size: 1.7rem; }
+  .stat-label { font-size: 0.76rem; }
+  .trend-card { padding: 18px; margin-top: 18px; border-radius: 14px; }
+  .records-section { margin-top: 24px; }
+  .records-header h3 { font-size: 1.05rem; }
+  .record-grid { grid-template-columns: 1fr; gap: 14px; }
+  .record-thumb { height: 140px; }
+  .record-body { padding: 14px 16px; }
+  .mini-ring-wrap { width: 56px; height: 56px; }
+  .records-empty { padding: 40px 16px; }
+  .records-empty .empty-icon { font-size: 2.6rem; }
+  .detail-overlay { padding: 12px; }
+  .detail-modal { border-radius: 16px; }
+  .detail-header { padding: 16px 18px; }
+  .detail-header h3 { font-size: 1rem; }
+  .detail-body { padding: 18px; }
+  .detail-image { max-height: 200px; }
 }
