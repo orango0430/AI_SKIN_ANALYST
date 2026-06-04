@@ -1,18 +1,6 @@
----
-title: SkinAI Backend
-emoji: 🩺
-colorFrom: green
-colorTo: blue
-sdk: docker
-app_port: 7860
-pinned: false
-license: mit
----
-
 # Skin AI Analyst 🩺
 
 > 얼굴 사진 1장으로 8개 부위 × 11개 항목의 피부 상태를 진단하는 AI 웹·앱 서비스
-> 단국대학교 졸업작품 · **Team Skinmate** (2025)
 
 [![Frontend](https://img.shields.io/badge/Frontend-Vercel-black)](https://ai-skin-analyst.vercel.app)
 [![Backend](https://img.shields.io/badge/Backend-HF%20Spaces-yellow)]()
