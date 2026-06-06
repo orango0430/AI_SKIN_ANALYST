@@ -74,6 +74,13 @@ def parse_args():
         type=int,
         help="N 이미지마다 명시적 가비지 컬렉트",
     )
+    parser.add_argument(
+        "--limit",
+        default=0,
+        type=int,
+        help="추출할 이미지 수 상한 (0=전체). A/B 테스트용 소규모 패치 생성에 사용. "
+             "앞에서부터 N장만 처리 — 두 학습 루프가 같은 패치를 쓰므로 동일성만 보장하면 됨.",
+    )
     return parser.parse_args()
 
 
@@ -220,7 +227,11 @@ def main():
                     "sub_fold": sub_fold,
                 })
 
-    print(f"총 이미지: {len(image_list):,}장\n")
+    print(f"총 이미지: {len(image_list):,}장")
+    if args.limit and args.limit > 0 and len(image_list) > args.limit:
+        image_list = image_list[: args.limit]
+        print(f"--limit 적용: 앞 {len(image_list):,}장만 추출 (A/B 테스트용)")
+    print()
 
     total_patches = 0
     failed = 0
