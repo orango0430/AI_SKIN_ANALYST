@@ -1,3 +1,16 @@
+---
+title: SkinAI Backend
+emoji: 🩺
+colorFrom: green
+colorTo: blue
+sdk: docker
+app_port: 7860
+pinned: false
+license: mit
+---
+
+<!-- 위 frontmatter는 HuggingFace Space(백엔드 Docker) 설정용 — 삭제 금지 -->
+
 # Skin AI Analyst 🩺
 
 > 얼굴 사진 1장으로 8개 부위 × 11개 항목의 피부 상태를 진단하는 AI 웹·앱 서비스
